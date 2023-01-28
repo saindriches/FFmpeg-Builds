@@ -1,7 +1,7 @@
 #!/bin/bash
 
-SCRIPT_REPO="https://github.com/uavs3/uavs3d.git"
-SCRIPT_COMMIT="0133ee4b4bbbef7b88802e7ad019b14b9b852c2b"
+SCRIPT_REPO="https://github.com/saindriches/uavs3d.git"
+SCRIPT_COMMIT="ca55185b3f1977dfd4d9dee33b24e2fcdc9ec02a"
 
 ffbuild_enabled() {
     [[ $TARGET == win32 ]] && return -1
