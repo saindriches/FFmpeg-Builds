@@ -1,13 +1,13 @@
 #!/bin/bash
 
-SCRIPT_REPO="https://github.com/xatabhk/davs2-10bit.git"
-SCRIPT_COMMIT="21d64c8f8e36af71fc7a488cd6f789c86cdd1200"
+SCRIPT_REPO="https://github.com/saindriches/davs2.git"
+SCRIPT_COMMIT="64a5d38ca57ceddbfe35a876da8f3c1c9111b820"
 
 ffbuild_enabled() {
     [[ $VARIANT == lgpl* ]] && return -1
     [[ $TARGET == win32 ]] && return -1
-    # davs2 aarch64 support is broken
-    [[ $TARGET == linuxarm64 ]] && return -1
+#     # davs2 aarch64 support is broken
+#     [[ $TARGET == linuxarm64 ]] && return -1
     return 0
 }
 
@@ -20,6 +20,7 @@ ffbuild_dockerbuild() {
     local myconf=(
         --disable-cli
         --enable-pic
+        --bit-depth=10
         --prefix="$FFBUILD_PREFIX"
     )
 
